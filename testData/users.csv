@@ -1,2 +1,4 @@
 username,password,firstName,lastName,country,streetAddress,zipCode,town,emailAddress,valid
-Playwright,playwright,John,Doe,Belgium,Zegersdreef 1,2930,Brasschaat,john.doe@example.com,true
+alicia.hobdell,5T6x7MRy8J7htxj,Alicia,Hobdell,Belgium,Zegersdreef 1,2930,Brasschaat,alicia.hobdell@example.com,true
+john.smith,P4ssw0rd123,John,Smith,Netherlands,Kerkstraat 12,1012AB,Amsterdam,john.smith@example.com,true
+emma.dubois,S3cur3Key456,Emma,Dubois,France,Rue de la Paix 8,75002,Paris,emma.dubois@example.com,true

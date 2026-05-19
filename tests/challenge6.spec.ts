@@ -4,7 +4,7 @@ import {userData, ProductData, loginPage, shopPage, productPage, cartPage, check
 setupHooks();
 
 userData.forEach(user => {
-  test('E2E test for user: ${user.username}', async () => {
+  test(`E2E test for user: ${user.username}`, async () => {
     test.setTimeout(60000);
 
     await loginPage.launch();
