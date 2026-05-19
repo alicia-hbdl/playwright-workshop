@@ -19,6 +19,7 @@ export class BasePage {
    async launch() {
     await this.page.goto('https://bitheap.tech', { waitUntil: 'domcontentloaded' });
   }
+  
    // Accept cookie consent
    async acceptCookies() {
     try {
