@@ -17,6 +17,6 @@ export class ShopPage extends BasePage {
             await this.nextPageArrow.click();
             await this.page.waitForLoadState('domcontentloaded');
         }
-        await this.page.getByAltText(productName).click();
+        await this.page.getByText(productName).click();
     }
 }

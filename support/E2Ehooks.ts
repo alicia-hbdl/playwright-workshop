@@ -1,7 +1,8 @@
-import { User } from "../dataClass/User"
+import { User } from "../dataClass/User";
 import { Product } from "../dataClass/Product";
 import { loadUserData, loadProductData } from "./dataLoaders";
 import { test } from "@playwright/test";
+
 import { LoginPage } from "../pages/challenge5/LoginPage";
 import { CheckoutPage } from "../pages/challenge6/CheckoutPage";
 import { OrderPage } from "../pages/challenge6/OrderPage";
@@ -19,26 +20,26 @@ export let cartPage: CartPage;
 export let userData: User[] = [];
 export let ProductData: Product[] = [];
 
-
 export function setupHooks() {
 
-  userData = loadUserData();
+    userData = loadUserData();
     ProductData = loadProductData();
-  test.beforeEach(async ({ page }) => {
-    loginPage = new LoginPage(page);
-    checkoutPage = new CheckoutPage(page);
-    orderPage = new OrderPage(page);
-    shopPage = new ShopPage(page);
-    productPage = new ProductPage(page);
-    cartPage = new CartPage(page);
 
-    for (const user of userData) {
-      if (user.valid) {
-        await loginPage.launch();
-        await loginPage.authenticate(user.username, user.password);
-        await cartPage.emptyCart();
-        await loginPage.logout();
-      }
-    }
-  });
+    test.beforeEach(async ({ page }) => {
+
+        loginPage = new LoginPage(page);
+        checkoutPage = new CheckoutPage(page);
+        orderPage = new OrderPage(page);
+        shopPage = new ShopPage(page);
+        productPage = new ProductPage(page);
+        cartPage = new CartPage(page);
+
+    });
+}
+
+export async function cleanCart(user: User) {
+    await loginPage.launch();
+    await loginPage.authenticate(user.username, user.password);
+    await cartPage.emptyCart();
+    await loginPage.logout();
 }
