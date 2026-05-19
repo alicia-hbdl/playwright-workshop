@@ -1,12 +1,13 @@
 import { test } from '@playwright/test';
 import {userData, ProductData, loginPage, shopPage, productPage, cartPage, checkoutPage, orderPage, setupHooks} from '../support/E2Ehooks';
 
+test.setTimeout(60000);
+
 setupHooks();
 
 userData.forEach(user => {
   test(`E2E test for user: ${user.username}`, async () => {
-    test.setTimeout(60000);
-
+    
     await loginPage.launch();
     await loginPage.acceptCookies();
     await loginPage.authenticate(user.username, user.password);

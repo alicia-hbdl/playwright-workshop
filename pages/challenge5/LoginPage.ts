@@ -24,7 +24,9 @@ export class LoginPage extends BasePage {
         await this.passwordField.fill(password);
         await this.signInButton.click();
         await this.page.waitForLoadState('domcontentloaded');
-        await expect(this.page.locator('css=#menu-item-2333 > a')).toHaveText(new RegExp(`Hello, ${username.split('.')[0]}`, 'i'));
+        await expect(this.page.locator('css=#menu-item-2333 > a')).toHaveText(new RegExp(`Hello, ${username.split('.')[0]}`, 'i'), {
+            timeout: 10000
+        });
     }
 }
 

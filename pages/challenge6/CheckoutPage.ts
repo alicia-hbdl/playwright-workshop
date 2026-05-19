@@ -1,5 +1,5 @@
 import { Page, Locator } from '@playwright/test';
-import { BasePage } from './BasePage';
+import { BasePage } from '../challenge5/BasePage';
 import { User } from '../../dataClass/User';
 
 export class CheckoutPage extends BasePage {
